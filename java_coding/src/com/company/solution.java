@@ -2,33 +2,126 @@ package com.company;
 import java.util.*;
 
 public class solution {
+    static int countFreq(int arr[], int n) {
+        Map<Integer, Integer> mp = new HashMap<>();
+        for (int i = 0; i < n; i++) {
+            if (mp.containsKey(arr[i])) {
+                mp.put(arr[i], mp.get(arr[i]) + 1);
+            } else {
+                mp.put(arr[i], 1);
+            }
+        }
+        int maxfreq = 0;
+        for (Map.Entry<Integer, Integer> entry : mp.entrySet())
+        {
+            if(entry.getValue() == n){
+                return 0;
+            }
+            if(maxfreq < entry.getValue()) {
+                maxfreq = entry.getValue();
+            }
+        }
+        int temp = n - maxfreq;
+       return temp;
+    }
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-//        int t = sc.nextInt();
-//        while(t-->0) {
-        int x = sc.nextInt();
-        if(x ==0 || x ==1)
-        {
-//            return x;
-            System.out.println(x);
-        }
-        int start = 0;
-        int end = x;  //8
-        int res =0;
-        while(start<=end)  //0<8 >>> 0<3
-        {
-            int mid = start + (end-start)/2; // 4 >>> 1 >>> 1
-            if(mid <= x/mid) //4<2 FALSE
-            {
-                res = mid;
-                start = mid + 1;
+        int t = sc.nextInt();
+        while(t-->0) {
+            int n = sc.nextInt();
+            int[] arr = new int[n];
+            for (int i=0;i<n;i++){
+                arr[i] = sc.nextInt();
             }
-            else //4>2 true
-            {
-                end = mid - 1; //3 >>> 2
-            }
-        }
-        System.out.println(res);
+            int ans = countFreq(arr,n);
+            System.out.println(ans);
+//            for (int i = 0; i < n ; i++) {
+//                if(arr[i] == ans){
+//                    System.out.println(i+1);
+//                }
+
+
+//            for (int i = 0; i <n; i++) {
+//                if((arr[i] != arr[i+1]) && (arr[i+1] != arr[i+2]) && (arr[i] == arr[i+2])){
+//                    System.out.println(i+2);
+//                }
+//                else if((arr[i] != arr[i+1]) && (arr[i+1] == arr[i+2])){
+//                    System.out.println(i+1);
+//                }
+//
+//            }
+//            String str = sc.next();
+//            int len = str.length();
+//            if(len>10){
+//                char f = str.charAt(0);
+//                char l = str.charAt(len-1);
+//                int p = len-2;
+//                System.out.print(f);
+//                System.out.print(p);
+//                System.out.print(l);
+//                System.out.println();
+//            }
+//            else{
+//                System.out.println(str);
+//            }
+
+//            int ans =1;
+//            while(ans*2<=n){
+//                ans = ans*2;
+//            }
+//            System.out.println(ans);
+//        int sum=0,count1=0,count2=0;
+//        int[] arr = new int[n];
+//        for (int i = 0; i < n; i++) {
+//            arr[i] = sc.nextInt();
+//            sum = sum + arr[i];
+//            if(arr[i] == 1){
+//                count1++;
+//            }
+//            else{
+//                count2++;
+//            }
+//        }
+//        if(count1 %2 == 1 ){
+//            System.out.println("NO");
+//        }
+//        else{
+//            if(count2 % 2 == 0 ) {
+//                System.out.println("YES");
+//            }
+//            else {
+//                if (count1 > 0) {
+//                    System.out.println("YES");
+//                } else {
+//                    System.out.println("NO");
+//                }
+//            }
+//        }
+
+
+
+//        if(x ==0 || x ==1)
+//        {
+////            return x;
+//            System.out.println(x);
+//        }
+//        int start = 0;
+//        int end = x;  //8
+//        int res =0;
+//        while(start<=end)  //0<8 >>> 0<3
+//        {
+//            int mid = start + (end-start)/2; // 4 >>> 1 >>> 1
+//            if(mid <= x/mid) //4<2 FALSE
+//            {
+//                res = mid;
+//                start = mid + 1;
+//            }
+//            else //4>2 true
+//            {
+//                end = mid - 1; //3 >>> 2
+//            }
+//        }
+//        System.out.println(res);
 
 //            String str = sc.next();
 //            int nq =0;
@@ -50,12 +143,6 @@ public class solution {
 //            }
 //            else{
 //                System.out.println("NO");
-//            }
-
-
-//            int[] arr = new int[3];
-//            for (int i = 0; i < 3; i++) {
-//                arr[i] = sc.nextInt();
 //            }
 //            Arrays.sort(arr);
 //            if (arr[0] + arr[1] == arr[2]){
@@ -156,4 +243,4 @@ public class solution {
 
         }
     }
-//}
+}
