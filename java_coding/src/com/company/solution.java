@@ -2,39 +2,61 @@ package com.company;
 import java.util.*;
 
 public class solution {
-    static int countFreq(int arr[], int n) {
-        Map<Integer, Integer> mp = new HashMap<>();
-        for (int i = 0; i < n; i++) {
-            if (mp.containsKey(arr[i])) {
-                mp.put(arr[i], mp.get(arr[i]) + 1);
-            } else {
-                mp.put(arr[i], 1);
-            }
-        }
-        int maxfreq = 0;
-        for (Map.Entry<Integer, Integer> entry : mp.entrySet())
-        {
-            if(entry.getValue() == n){
-                return 0;
-            }
-            if(maxfreq < entry.getValue()) {
-                maxfreq = entry.getValue();
-            }
-        }
-        int temp = n - maxfreq;
-       return temp;
-    }
+
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int t = sc.nextInt();
-        while(t-->0) {
-            int n = sc.nextInt();
-            int[] arr = new int[n];
-            for (int i=0;i<n;i++){
-                arr[i] = sc.nextInt();
+        int n = sc.nextInt();
+        int ans = n;
+        for (int i = 0; i < n; i++) {
+            String s = sc.nextLine();
+            if(s.charAt(0) == 'X' && s.charAt(1) == '+'){
+                ans++;
             }
-            int ans = countFreq(arr,n);
-            System.out.println(ans);
+            Arrays.
+//            else if()
+
+
+
+
+
+
+
+
+//        int p = 10;
+//        int q = 15;
+//            int ans = Math.abs(p-q);
+//        while(t-->0) {
+//            long n = sc.nextLong();
+//            long  x = n/6;
+//            long y = n%6;
+//            if(n<=6){
+//                System.out.println(15);
+//            }
+//            else if(y == 0){
+//                System.out.println(x*15);
+//            }
+//            else if(y<=2){
+//                System.out.println((x*15) + 5);
+//            }
+//            else if(y<=4){
+//                System.out.println((x*15) + 10);
+//            }
+//            else{
+//                x++;
+//                System.out.println(x*15);
+//            }
+
+//            int n = sc.nextInt();
+//            int[] arr = new int[n];
+//            for (int i=0;i<n;i++){
+//                arr[i] = sc.nextInt();
+//            }
+            ArrayList<String> ar = new ArrayList<>();
+            ar.add("c1");
+            char p = ar.get(0).charAt(0);
+            System.out.println(p--);
+//            int ans = countFreq(arr,n);
+//            System.out.println(ans);
 //            for (int i = 0; i < n ; i++) {
 //                if(arr[i] == ans){
 //                    System.out.println(i+1);
@@ -243,4 +265,28 @@ public class solution {
 
         }
     }
+     /*
+    static int countFreq(int arr[], int n) {
+        Map<Integer, Integer> mp = new HashMap<>();
+        for (int i = 0; i < n; i++) {
+            if (mp.containsKey(arr[i])) {
+                mp.put(arr[i], mp.get(arr[i]) + 1);
+            } else {
+                mp.put(arr[i], 1);
+            }
+        }
+        int maxfreq = 0;
+        for (Map.Entry<Integer, Integer> entry : mp.entrySet())
+        {
+            if(entry.getValue() == n){
+                return 0;
+            }
+            if(maxfreq < entry.getValue()) {
+                maxfreq = entry.getValue();
+            }
+        }
+        int temp = n - maxfreq;
+       return temp;
+    }
+     */
 }
