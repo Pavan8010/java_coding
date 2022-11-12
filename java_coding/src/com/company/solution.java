@@ -6,22 +6,39 @@ public class solution {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-        int ans = n;
-        for (int i = 0; i < n; i++) {
-            String s = sc.nextLine();
-            if(s.charAt(0) == 'X' && s.charAt(1) == '+'){
-                ans++;
+        int count = 0;
+        for (int i = 0; i < n ; i++) {
+            int a = sc.nextInt();
+            int b = sc.nextInt();
+            int c = sc.nextInt();
+            if((a==1 && b==1) || (a==1 && c==1) || (b==1 && c==1) ){
+                count++;
             }
-            Arrays.
-//            else if()
+        }
+        System.out.println(count);
+//        int max = 0;
+//        if(a>b && a>c) {
+//            max = a;
+//        }else if(b>a &&b>c){
+//            max = b;
+//        }
+//        else{
+//            max = c;
+//        }
+//        System.out.print(max - a + 1);
+////        System.out.println(max - a);
+//        ArrayList<Integer> list = new ArrayList<Integer>();
+//        list.contains(5);
+
+//        for (int i = 0; i < 3; i++) {
+//            if()
+//            String s = sc.nextLine();
+//            if(s.charAt(0) == 'X' && s.charAt(1) == '+'){
+//                ans++;
+//            }
 
 
-
-
-
-
-
-
+      /*
 //        int p = 10;
 //        int q = 15;
 //            int ans = Math.abs(p-q);
@@ -263,8 +280,10 @@ public class solution {
 //            else{
 //                System.out.println("NO");
 
+ */
         }
     }
+
      /*
     static int countFreq(int arr[], int n) {
         Map<Integer, Integer> mp = new HashMap<>();
@@ -289,4 +308,4 @@ public class solution {
        return temp;
     }
      */
-}
+//}
