@@ -2,12 +2,15 @@ package com.company;
 import java.util.*;
 
 public class solution {
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int n = sc.nextInt();
+        int t = sc.nextInt();
+        while(t-->0){
         int count = 0;
-        for (int i = 0; i < n ; i++) {
+        for (int i = 0; i < 2*t; i++) {
+            String str = sc.nextLine();
+            int len = str.length();
+
             int a = sc.nextInt();
             int b = sc.nextInt();
             int c = sc.nextInt();
@@ -308,4 +311,4 @@ public class solution {
        return temp;
     }
      */
-//}
+}
