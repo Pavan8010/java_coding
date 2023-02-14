@@ -3,7 +3,7 @@ import java.util.*;
 
 public class Maze {
     public static void main(String[] args) {
-        System.out.println("No of Paths are : "+noOfPaths(51,9));
+//        System.out.println("No of Paths are : "+noOfPaths(51,9));
 
 //        path("",3,3);
 
@@ -14,12 +14,17 @@ public class Maze {
 //        System.out.println("diagonal , horizontal and vertical paths");
 //        List<String> ans2 = pathsRetDiagonal("",3,3);
 //        System.out.println(ans2);
-//        boolean[][] board = {
-//                {true,true,true},
-//                {true,false,true},
-//                {true,true,true}
-//        };
+        boolean[][] board = {
+                {true,true,true},
+                {true,true,true},
+                {true,true,true}
+        };
+
 //        pathRestriction("",board,0,0);
+//        allPaths("",board,0,0);
+
+
+
     }
 
 
@@ -90,11 +95,39 @@ public class Maze {
         if(maze[r][c] == false){
             return;
         }
+
         if(r< maze.length-1){
             pathRestriction(p+"D" , maze,r+1,c);
         }
         if (c< maze[0].length-1){
             pathRestriction(p+"R",maze,r,c+1);
         }
+    }
+
+    static void allPaths(String p , boolean[][] maze, int r,int c){
+        if(r == maze.length-1 && c==maze[0].length-1){
+            System.out.println(p);
+            return;
+        }
+        if(maze[r][c] == false){
+            return;
+        }
+        maze[r][c] = false;
+
+        if(r< maze.length-1){
+            allPaths(p+"D" , maze,r+1,c);
+        }
+        if (c< maze[0].length-1){
+            allPaths(p+"R",maze,r,c+1);
+        }
+        if(r>0){
+            allPaths(p+'U',maze,r-1,c);
+        }
+        if(c>0){
+            allPaths(p+'L',maze,r,c-1);
+        }
+        //this line is where the funcion call will be over
+        // so therefore the funtion gets removed ,also remove the chnages that were made by the function
+        maze[r][c] = true;
     }
 }
