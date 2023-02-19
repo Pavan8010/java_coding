@@ -1,10 +1,10 @@
-package com.company.gfg;
+package com.company.Tree;
 
 public class maths {
     public static void main(String[] args) {
         System.out.println(Gcd(10,9));
         String temp = "pavan";
-        String ans = String.r
+//        String ans = String.;
     }
     static int countTrilingZeroes(int n){
         int count = 0;
