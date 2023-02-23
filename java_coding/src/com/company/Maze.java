@@ -20,15 +20,9 @@ public class Maze {
                 {true,true,true}
         };
 
-//        pathRestriction("",board,0,0);
+        pathRestriction("",board,0,0);
 //        allPaths("",board,0,0);
-
-
-
     }
-
-
-
     static int noOfPaths(int r ,int c){
         if(r==1 || c==1){
             return 1;
