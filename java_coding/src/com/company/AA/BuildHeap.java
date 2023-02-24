@@ -1,11 +1,11 @@
-package com.company.Heap;
+package com.company.AA;
 
 public class BuildHeap {
     public static void main(String args[]) {
         int arr[] = {1, 3, 5, 4, 6, 13, 10, 9, 8, 15, 17};
         int N = arr.length;
         buildHeap(arr, N);
-        printHeap(arr, N);
+        printarr(arr, N);
     }
     static void heapify(int arr[], int N, int i){
         int largest = i; // intialize largest as a root
@@ -36,7 +36,7 @@ public class BuildHeap {
         }
     }
 
-    static void printHeap(int arr[], int N){
+    static void printarr(int arr[], int N){
         System.out.println("Array representation of Heap is:");
         for (int i :arr)
             System.out.print(i+ " ");

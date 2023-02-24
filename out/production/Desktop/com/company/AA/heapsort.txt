@@ -1,0 +1,23 @@
+// Algorithm of Heap sort
+    for i = n - 1 till i >= 0:
+        // taking the largest number from and the heap and placing it at the end
+      swap arr[0], arr[i]
+        // Heapifying the tree recursively starting from index 0
+         heapify(arr, i, 0);
+  end for
+
+// Algorithm of heapify
+heapify(array, n, index) {
+    size = array.size()
+largest = index
+    left = 2 * index + 1
+    right = 2 * index + 2
+    if left < n && arr[left] > arr[largest]
+        largest = left
+    if right < n && arr[right] > arr[largest]
+        largest = right
+      if largest != index {
+        swap arr[index], arr[largest]
+        heapify(arr, n, largest)
+    }
+}
