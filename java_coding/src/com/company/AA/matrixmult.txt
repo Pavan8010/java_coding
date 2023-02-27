@@ -1,0 +1,17 @@
+// algotrithm for chain matrix multiplication
+for i=1 to n do
+    m[i,i] = 0
+endfor
+for l = 2 to n do
+    for i = 1 to n-l+1 do
+        j = i+l-1
+        m[i,j] = infinity
+        for k =i to j-1 do
+            mult = m[i,k] + m[k+1,j] + p[i-1]*p[k]*p[j];
+            if(mult<m[i,j])
+                m[i,j] = mult
+                s[i,j] = k
+            endif
+        endfor
+    endfor
+endfor

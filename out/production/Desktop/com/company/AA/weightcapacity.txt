@@ -1,0 +1,12 @@
+// algorithm for weight and capacity knapsack problem
+
+step 1:
+sort the array such that Wi <= Wj where i<j
+
+step 2:
+T = 0, w(t) = 0, i = 1, W = capacity
+while(w(t) + Wi <= W) do
+    T = T U { arr[i] }
+    w(t) = w(t) + Wi
+    i = i+1
+endwhile

@@ -1,0 +1,15 @@
+// algorithm for scheudling probelm
+ step 1:
+ sort such that fi <= fj where i<j
+
+ step 2:
+ T = {1}
+ last = 1
+
+ step 3:
+ for i=2 to n do
+    if(flast <= Si) do
+        T = T U {i}
+        last = i
+    endif
+ endfor
