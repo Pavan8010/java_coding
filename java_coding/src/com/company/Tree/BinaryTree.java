@@ -1,5 +1,7 @@
 package com.company.Tree;
 // non-recursive java program for inorder traversal
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Stack;
 
 /* Class containing left and right child of current node and key value*/
@@ -42,7 +44,14 @@ class BinaryTree {
 //        tree.preorder(root);
 //          System.out.println("<--------------------------postTraversal ----------------------------->");
 //          tree.postorder(root);
-        System.out.println("heighht of the tree is: " + height(root));
+        System.out.println("height of the tree is: " + height(root)); // HEIGHT OF TREE
+//        Queue<Node> q = new LinkedList<>();
+//        q.add(root);
+//        q.add(null);
+//        levelOrder3(q);
+        System.out.println("size of the tree is: " + sizeOfTree(root));
+
+        System.out.println("maximum value in the tree is: " + maximumInTree(root));
     }
     // left root right
     void inorderwithoutRecurrsion(){
@@ -99,5 +108,50 @@ class BinaryTree {
             return 0;
         }
         return Math.max(height(root.left),height(root.right))+1;
+    }
+
+    static void levelOrder(Queue<Node> q){
+        while(!q.isEmpty()){
+            Node curr = q.poll();
+            if(curr == null) return;
+            System.out.print(curr.data+ " ");
+            if(curr.left!= null)q.add(curr.left);
+            if(curr.right != null)q.add(curr.right);
+        }
+    }
+    static void levelOrder2(Queue<Node> q){
+        while(q.size()>1){
+            Node curr = q.remove();
+            if(curr == null){
+                System.out.println("");
+                q.add(null);
+                continue;
+            }
+            System.out.print(curr.data+ " ");
+            if(curr.left!= null)q.add(curr.left);
+            if(curr.right != null)q.add(curr.right);
+        }
+    }
+    static void levelOrder3(Queue<Node> q){
+        while(!q.isEmpty()){
+            int size = q.size();
+            for (int i=0;i<size;i++){
+                Node curr = q.poll();
+                System.out.print(curr.data + " ");
+                if (curr.left != null)q.add(curr.left);
+                if (curr.right != null)q.add(curr.right);
+            }
+            System.out.println();
+        }
+    }
+
+    static int sizeOfTree(Node root){
+        if(root == null) return 0;
+
+        return 1 + sizeOfTree(root.left) + sizeOfTree(root.right);
+    }
+    static int maximumInTree(Node root){
+        if(root == null) return -1;
+        return Math.max(root.data , Math.max( maximumInTree(root.left) , maximumInTree(root.right) ));
     }
 }
