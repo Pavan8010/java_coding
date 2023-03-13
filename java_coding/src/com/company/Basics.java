@@ -1,9 +1,5 @@
 package com.company;
 
-import java.util.Random;
-import java.util.Scanner;
-
-
 
 // Method overloading
 /*
@@ -188,7 +184,7 @@ public static void main(String[] args) {
         4. getter and setter for noOfGusses
         use properties such as noOfGusses(int) , etc to get this task done!
       */
-class  Main{
+class  Basics{
      public static void main(String[] args) {
 
      }

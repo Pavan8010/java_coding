@@ -287,7 +287,6 @@ public class solution {
         }
     }
 
-     /*
     static int countFreq(int arr[], int n) {
         Map<Integer, Integer> mp = new HashMap<>();
         for (int i = 0; i < n; i++) {
@@ -310,5 +309,4 @@ public class solution {
         int temp = n - maxfreq;
        return temp;
     }
-     */
 }
