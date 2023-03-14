@@ -14,6 +14,14 @@ class Node{
     }
 }
 /* Class to print the inorder traversal */
+class TreeInfo{
+    int ht;
+    int diam;
+    TreeInfo(int ht,int diam){
+        this.ht = ht;
+        this.diam = diam;
+    }
+}
 class BinaryTree {
     static Node root;
     public static void main(String args[]){
@@ -36,25 +44,9 @@ class BinaryTree {
         tree.root.right.right = new Node(6);
         tree.root.left.right.left = new Node(7);
         tree.root.left.right.right = new Node(8);
-//        System.out.println("<--------------------------Inorder Traversal ----------------------------->");
-//        tree.inorderwithoutRecurrsion();
-//        System.out.println();
-//        tree.inorder(root);
-//        System.out.println("<--------------------------Pre Traversal ----------------------------->");
-//        tree.preorder(root);
-//          System.out.println("<--------------------------postTraversal ----------------------------->");
-//          tree.postorder(root);
-        System.out.println("height of the tree is: " + height(root)); // HEIGHT OF TREE
-//        Queue<Node> q = new LinkedList<>();
-//        q.add(root);
-//        q.add(null);
-//        levelOrder3(q);
-        System.out.println("size of the tree is: " + sizeOfTree(root));
 
-        System.out.println("maximum value in the tree is: " + maximumInTree(root));
     }
-    // left root right
-    void inorderwithoutRecurrsion(){
+    static void inorderwithoutRecurrsion(){
         if (root == null)
             return;
 
@@ -77,39 +69,36 @@ class BinaryTree {
             curr = curr.right;
         }
     }
-    void inorder(Node root){
+    static void inorder(Node root){
+        // left root right
         if(root != null){
             inorder(root.left);
             System.out.print(root.data + " ");
             inorder(root.right);
         }
     }
-
+    static void preorder(Node root){
     // root left right
-    void preorder(Node root){
         if(root != null){
             System.out.print(root.data + " ");
             preorder(root.left);
             preorder(root.right);
         }
     }
-
+    static void postorder(Node root){
     //left right root
-    void postorder(Node root){
         if(root != null){
             postorder(root.left);
             postorder(root.right);
             System.out.print(root.data + " ");
         }
     }
-
     static int height(Node root){
         if(root == null){
             return 0;
         }
         return Math.max(height(root.left),height(root.right))+1;
-    }
-
+    } // TC: O(n)
     static void levelOrder(Queue<Node> q){
         while(!q.isEmpty()){
             Node curr = q.poll();
@@ -144,7 +133,6 @@ class BinaryTree {
             System.out.println();
         }
     }
-
     static int sizeOfTree(Node root){
         if(root == null) return 0;
 
@@ -154,4 +142,42 @@ class BinaryTree {
         if(root == null) return -1;
         return Math.max(root.data , Math.max( maximumInTree(root.left) , maximumInTree(root.right) ));
     }
+    static int CountOfNodes(Node root){
+        if(root == null){
+            return 0;
+        }
+        return (1+CountOfNodes(root.left) + CountOfNodes(root.right));
+    } // TC: O(n)
+    static int sumOfAllNodes(Node root){
+        if(root == null){
+            return 0;
+        }
+        return sumOfAllNodes(root.left) + sumOfAllNodes(root.right) + root.data;
+    }
+    static int diameter(Node root){
+        if(root == null){
+            return 0;
+        }
+        int diam1 = diameter(root.left);
+        int diam2 = diameter(root.right);
+        int diam3 = height(root.left)+height(root.right)+1;
+        return Math.max(diam3,Math.max(diam1,diam2));
+    } // TC: O(n^2)
+    static TreeInfo diameter2(Node root){
+        if(root==null){
+            return new TreeInfo(0,0);
+        }
+        TreeInfo left = diameter2(root.left);
+        TreeInfo right = diameter2(root.right);
+
+        int myheight = Math.max(left.ht,right.ht)+1;
+
+        int diam1 = left.diam;
+        int diam2 = right.diam;
+        int diam3 = left.ht+right.ht+1;
+        int mydiam = Math.max(Math.max(diam1,diam2),diam3);
+        TreeInfo myInfo = new TreeInfo(myheight,mydiam);
+        return myInfo;
+    } //TC: O(n)
+
 }

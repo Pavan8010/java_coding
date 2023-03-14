@@ -1,7 +1,5 @@
 package com.company.BinarySearchTree;
-
 import java.util.ArrayList;
-
 class Node{
     int data;
     Node left = this.left;
@@ -12,7 +10,6 @@ class Node{
 }
 
 public class BST {
-
     static Node insert(Node root, int val){
         if(root == null){
             root = new Node(val);
@@ -138,7 +135,6 @@ public class BST {
             return;
         }
     }
-
     static void inorder(Node root,ArrayList<Integer> traversal){
         if(root != null){
             inorder(root.left,traversal);
