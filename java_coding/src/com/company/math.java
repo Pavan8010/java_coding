@@ -13,7 +13,6 @@ public class math {
         }
         return count;
     }
-
     static int GCD(int a,int b){
         int res = Math.min(a,b);
         while(res>0){
@@ -32,4 +31,23 @@ public class math {
         return Gcd(b,a%b);
 
     }
+    static long binpow(long a, long b) {
+        long res = 1;
+        while (b > 0) {
+            if ((b & 1) == 1) res *= a;
+            a *= a;
+            b >>= 1;
+        }
+
+        return res;
+    }
+    static int hcf(int a, int b) {
+        if (b != 0) return hcf(b, a % b);
+        else return a;
+    }
+    static int lcm(int a, int b) {
+        int hcfV = hcf(a, b);
+        return (a * b) / hcfV;
+    }
 }
+
