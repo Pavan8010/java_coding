@@ -8,11 +8,11 @@ public class Permutation {
 //        permutation("","ab");
 //
 //        //method 2
-//        ArrayList<String> ans = permutationList("","abc");
-//        System.out.println(ans);
+        ArrayList<String> ans = permutationList("","abc");
+        System.out.println(ans);
 
-        int noOfPermutaion = permutationcount("","abc");
-        System.out.println(noOfPermutaion);
+//        int noOfPermutaion = permutationcount("","abc");
+//        System.out.println(noOfPermutaion);
 
 
     }
