@@ -1,4 +1,6 @@
 package com.company;
+import jdk.swing.interop.SwingInterOpUtils;
+
 import java.util.*;
 
 public class Maze {
@@ -8,7 +10,7 @@ public class Maze {
 //        path("",3,3);
 
 //        System.out.println("right and down paths:");
-//        List<String> ans = pathsRet("",3,3);
+//        List<String> ans = pathsRet("",75,5);
 //        System.out.println(ans);
 
 //        System.out.println("diagonal , horizontal and vertical paths");
@@ -20,7 +22,7 @@ public class Maze {
                 {true,true,true}
         };
 
-        pathRestriction("",board,0,0);
+//        pathRestriction("",board,0,0);
 //        allPaths("",board,0,0);
     }
     static int noOfPaths(int r ,int c){

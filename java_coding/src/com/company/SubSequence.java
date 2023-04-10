@@ -1,6 +1,7 @@
 package com.company;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class SubSequence {
     public static void main(String[] args) {
@@ -8,9 +9,16 @@ public class SubSequence {
         // subseq("","abc");
 
         //method 2
-        ArrayList<String> ans = subseqlist("","abc");
-        System.out.println(ans);
-
+//        ArrayList<String> ans = subseqlist("","abc");
+//        System.out.println(ans);
+        String str = "pavan";
+        System.out.println(str.substring(1,4));
+        int[] arr = {1,2,3,4};
+        Stack<Integer> st = new Stack<>();
+        st.push(10);
+        st.push(20);
+        ArrayList<Integer> list = new ArrayList<>(st);
+        System.out.println(st);
     }
     static void subseq(String p,String up){
         if(up.isEmpty()){
