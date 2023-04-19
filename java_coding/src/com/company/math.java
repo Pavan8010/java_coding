@@ -1,10 +1,35 @@
 package com.company;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class math {
     public static void main(String[] args) {
-        System.out.println(Gcd(10,9));
-        String temp = "pavan";
-//        String ans = String.;
+//        System.out.println(Gcd(10,9));
+//        int[][] arr = {{2,4}, {5,6},{1,5},{4,9}};
+//        Arrays.sort(arr, (a,b) -> a[0] - b[0]);
+//
+//        System.out.println(arr);
+//        ArrayList<Integer> list = new ArrayList<>();
+//        list.add(1);
+//        list.add(2);
+//        list.remove(0);
+//        list.add(0);
+//
+//        System.out.println(list);
+//        StringBuilder sb = new StringBuilder();
+//        sb.append("/");
+        String str = "/../";
+//        sb.append(str);
+        String[] ch = str.split("/");
+        String ans  = String.join( "/",ch);
+        System.out.println(ans);
+//        for(String s:ch){
+//            System.out.println(s);
+//        }
+//        sb.deleteCharAt(n);
+//        sb.length();
+//        System.out.println(sb.toString());
     }
     static int countTrilingZeroes(int n){
         int count = 0;
@@ -49,7 +74,6 @@ public class math {
         int hcfV = hcf(a, b);
         return (a * b) / hcfV;
     }
-
     static boolean isPrime(int n){
         if(n<=1){
             return false;

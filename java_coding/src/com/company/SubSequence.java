@@ -6,19 +6,19 @@ import java.util.Stack;
 public class SubSequence {
     public static void main(String[] args) {
         //method1
-        // subseq("","abc");
+//         subseq("","abac");
 
         //method 2
-//        ArrayList<String> ans = subseqlist("","abc");
-//        System.out.println(ans);
-        String str = "pavan";
-        System.out.println(str.substring(1,4));
-        int[] arr = {1,2,3,4};
-        Stack<Integer> st = new Stack<>();
-        st.push(10);
-        st.push(20);
-        ArrayList<Integer> list = new ArrayList<>(st);
-        System.out.println(st);
+        ArrayList<String> ans = subseqlist("","bbbab");
+        System.out.println(ans);
+//        String str = "pavan";
+//        System.out.println(str.substring(1,4));
+//        int[] arr = {1,2,3,4};
+//        Stack<Integer> st = new Stack<>();
+//        st.push(10);
+//        st.push(20);
+//        ArrayList<Integer> list = new ArrayList<>(st);
+//        System.out.println(st);
     }
     static void subseq(String p,String up){
         if(up.isEmpty()){
